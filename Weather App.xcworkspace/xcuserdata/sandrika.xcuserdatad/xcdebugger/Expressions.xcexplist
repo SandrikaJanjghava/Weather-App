@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in TabBarViewController.loadWeather(usingLon:lat:):TabBarViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CurrentWeatherViewController.customization():CurrentWeatherViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "current?.current">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in TabBarViewController.loadWeather(usingLon:lat:current:):TabBarViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DailyTableViewCell.fillCell(with:):DailyTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item.weather.first">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in DailyWeatherViewController.createDataSource():DailyWeatherViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

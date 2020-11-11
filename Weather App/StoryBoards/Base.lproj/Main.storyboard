@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q8P-S5-tMn">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="36i-2H-Yvd">
+            <objects>
+                <viewController storyboardIdentifier="DailyWeatherViewController" id="1jR-cj-Elu" customClass="DailyWeatherViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AI6-6O-HKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lGY-ar-agq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DailyTableViewCell" rowHeight="60" id="ufA-N4-e0u" customClass="DailyTableViewCell" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ufA-N4-e0u" id="Em4-39-cKt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wWz-7y-LWj">
+                                                    <rect key="frame" x="75" y="10" width="53.5" height="39.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVa-dY-nTw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="18"/>
+                                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudly" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZe-pG-gs8">
+                                                            <rect key="frame" x="0.0" y="22" width="53.5" height="17.5"/>
+                                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Is3-aE-A4N" userLabel="Line View">
+                                                    <rect key="frame" x="75" y="59.5" width="300" height="0.5"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="f1Y-0I-Lt6">
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </constraint>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ3-ui-Wcr">
+                                                    <rect key="frame" x="138.5" y="17.5" width="226.5" height="25"/>
+                                                    <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zG3-Nd-FOl">
+                                                    <rect key="frame" x="20" y="15" width="40" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="FKO-J5-C5y"/>
+                                                        <constraint firstAttribute="height" constant="30" id="W5J-wE-2XT"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Is3-aE-A4N" firstAttribute="top" secondItem="wWz-7y-LWj" secondAttribute="bottom" constant="10" id="7Fq-Ib-hTf">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </constraint>
+                                                <constraint firstAttribute="bottom" secondItem="Is3-aE-A4N" secondAttribute="bottom" id="C73-ko-6cC">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </constraint>
+                                                <constraint firstItem="tZ3-ui-Wcr" firstAttribute="centerY" secondItem="wWz-7y-LWj" secondAttribute="centerY" id="Yig-1p-v0O">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </constraint>
+                                                <constraint firstItem="wWz-7y-LWj" firstAttribute="top" secondItem="Em4-39-cKt" secondAttribute="top" constant="10" id="aH7-DV-s3k">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </constraint>
+                                                <constraint firstItem="zG3-Nd-FOl" firstAttribute="centerY" secondItem="wWz-7y-LWj" secondAttribute="centerY" id="cM8-VL-3TX"/>
+                                                <constraint firstItem="tZ3-ui-Wcr" firstAttribute="leading" secondItem="wWz-7y-LWj" secondAttribute="trailing" constant="10" id="dfA-iI-rhy">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </constraint>
+                                                <constraint firstItem="zG3-Nd-FOl" firstAttribute="leading" secondItem="Em4-39-cKt" secondAttribute="leading" constant="20" id="imC-YV-gtU"/>
+                                                <constraint firstAttribute="trailing" secondItem="Is3-aE-A4N" secondAttribute="trailing" id="nKo-C6-Rbq">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </constraint>
+                                                <constraint firstItem="wWz-7y-LWj" firstAttribute="leading" secondItem="zG3-Nd-FOl" secondAttribute="trailing" constant="15" id="oGc-Jg-nr7"/>
+                                                <constraint firstAttribute="trailing" secondItem="tZ3-ui-Wcr" secondAttribute="trailing" constant="10" id="pb6-Nk-9uX">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </constraint>
+                                                <constraint firstItem="Is3-aE-A4N" firstAttribute="leading" secondItem="wWz-7y-LWj" secondAttribute="leading" id="yc0-qs-HT5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLbl" destination="UZe-pG-gs8" id="hnz-De-gke"/>
+                                            <outlet property="temperatureLbl" destination="tZ3-ui-Wcr" id="2mQ-jM-fAL"/>
+                                            <outlet property="testImage" destination="zG3-Nd-FOl" id="IRq-wv-3TS"/>
+                                            <outlet property="timeLbl" destination="OVa-dY-nTw" id="J5C-C3-RdU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1jR-cj-Elu" id="zJ3-GR-91Q"/>
+                                    <outlet property="delegate" destination="1jR-cj-Elu" id="ZuG-9K-KV5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3us-FO-Hp2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lGY-ar-agq" firstAttribute="bottom" secondItem="3us-FO-Hp2" secondAttribute="bottom" id="C0V-US-kkM">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="lGY-ar-agq" firstAttribute="trailing" secondItem="3us-FO-Hp2" secondAttribute="trailing" id="DoS-ez-dFg">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="lGY-ar-agq" firstAttribute="top" secondItem="3us-FO-Hp2" secondAttribute="top" id="hbG-jE-e4h">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="lGY-ar-agq" firstAttribute="leading" secondItem="3us-FO-Hp2" secondAttribute="leading" id="vA8-En-LPI">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="cUZ-du-w6P"/>
+                    <connections>
+                        <outlet property="tableView" destination="lGY-ar-agq" id="NdQ-Z9-KaD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lME-Ez-hfz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.59999999999999" y="423.23838080959524"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="hfb-Ak-mJi">
+            <objects>
+                <viewController storyboardIdentifier="CurrentWeatherViewController" id="h6U-hZ-isk" customClass="CurrentWeatherViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ipZ-Lk-Wcy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POB-Jy-9Ws">
+                                <rect key="frame" x="20" y="140" width="335" height="20"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustFontSizeToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZX-tg-gGJ">
+                                <rect key="frame" x="30" y="226" width="315" height="172"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhi-Go-56x">
+                                        <rect key="frame" x="40" y="0.0" width="235" height="2"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="5hD-qo-meT">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" translatesAutoresizingMaskIntoConstraints="NO" id="BmI-3c-9Dh">
+                                        <rect key="frame" x="15" y="17" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="RAJ-Xa-vjS">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="30" id="gsL-25-diK">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3n-3G-dZ1" customClass="PaddingLabel" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="52" width="60" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustFontSizeToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="third" translatesAutoresizingMaskIntoConstraints="NO" id="XQR-fc-gnP">
+                                        <rect key="frame" x="270" y="17" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="B3m-Pv-Qul">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="30" id="z7u-lA-yLO">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaB-dK-Vrh" customClass="PaddingLabel" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="255" y="52" width="60" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustFontSizeToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second" translatesAutoresizingMaskIntoConstraints="NO" id="xMV-fT-d5T">
+                                        <rect key="frame" x="142.5" y="17" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Oq1-X3-iiv">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="30" id="RcS-bS-3l0">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYe-Rk-60H" customClass="PaddingLabel" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="131" y="52" width="53.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustFontSizeToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fourth" translatesAutoresizingMaskIntoConstraints="NO" id="jGe-KT-W91">
+                                        <rect key="frame" x="112.5" y="98.5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="dJO-xG-o0w">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="30" id="etU-ea-HQQ">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zh8-44-HFg" customClass="PaddingLabel" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="124.5" y="133.5" width="6.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustFontSizeToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fifth" translatesAutoresizingMaskIntoConstraints="NO" id="QJ3-s3-WfO">
+                                        <rect key="frame" x="172.5" y="98.5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="PZI-zQ-xZ4">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="30" id="iCx-XI-qJZ">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUz-Zp-EO3" customClass="PaddingLabel" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="184.5" y="133.5" width="6.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustFontSizeToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-DI-3Iv">
+                                        <rect key="frame" x="40" y="170" width="235" height="2"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="h5A-b2-qJ6">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zh8-44-HFg" firstAttribute="trailing" secondItem="tYe-Rk-60H" secondAttribute="leading" id="1tT-Wr-hJ0">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="tUz-Zp-EO3" firstAttribute="leading" secondItem="tYe-Rk-60H" secondAttribute="trailing" id="4rO-iE-Hxj">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="zh8-44-HFg" firstAttribute="centerX" secondItem="jGe-KT-W91" secondAttribute="centerX" id="5Y1-PM-6pt">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="4mF-DI-3Iv" secondAttribute="trailing" constant="40" id="6ih-gm-oUQ">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="tYe-Rk-60H" firstAttribute="top" secondItem="xMV-fT-d5T" secondAttribute="bottom" constant="5" id="8Gf-Gl-7yi">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="yaB-dK-Vrh" firstAttribute="centerX" secondItem="XQR-fc-gnP" secondAttribute="centerX" id="Bai-nE-Ixm">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="tYe-Rk-60H" firstAttribute="centerX" secondItem="xMV-fT-d5T" secondAttribute="centerX" id="CF7-MR-u3h">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="BmI-3c-9Dh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mZX-tg-gGJ" secondAttribute="leading" constant="15" id="F4e-41-0xm">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="bhi-Go-56x" firstAttribute="trailing" secondItem="4mF-DI-3Iv" secondAttribute="trailing" id="GkE-zg-58C">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="QJ3-s3-WfO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jGe-KT-W91" secondAttribute="trailing" constant="30" id="HSW-Kr-mlk">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="XQR-fc-gnP" firstAttribute="top" secondItem="xMV-fT-d5T" secondAttribute="top" id="L1j-u2-3cS">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="BmI-3c-9Dh" firstAttribute="top" secondItem="bhi-Go-56x" secondAttribute="bottom" constant="5" id="MWr-d9-Vvi">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="yaB-dK-Vrh" firstAttribute="top" secondItem="XQR-fc-gnP" secondAttribute="bottom" constant="5" id="NZc-Kr-1do">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="q3n-3G-dZ1" firstAttribute="top" secondItem="BmI-3c-9Dh" secondAttribute="bottom" constant="5" id="Omt-2V-hZN">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="bhi-Go-56x" firstAttribute="height" secondItem="4mF-DI-3Iv" secondAttribute="height" id="P21-pm-8QR">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="yaB-dK-Vrh" secondAttribute="trailing" id="PJz-bb-wdR">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="tUz-Zp-EO3" firstAttribute="centerX" secondItem="QJ3-s3-WfO" secondAttribute="centerX" id="Rhb-5q-vkf">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="tUz-Zp-EO3" firstAttribute="top" secondItem="QJ3-s3-WfO" secondAttribute="bottom" constant="5" id="U5B-KL-Zws">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="jGe-KT-W91" firstAttribute="top" secondItem="q3n-3G-dZ1" secondAttribute="bottom" constant="15" id="Ys9-sk-iYU">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="tUz-Zp-EO3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zh8-44-HFg" secondAttribute="trailing" constant="40" id="aH6-GV-gXB">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="jGe-KT-W91" firstAttribute="top" secondItem="q3n-3G-dZ1" secondAttribute="bottom" constant="25" id="aQp-QW-3H4">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="4mF-DI-3Iv" firstAttribute="top" secondItem="tUz-Zp-EO3" secondAttribute="bottom" constant="15" id="af8-qK-HOa">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="zh8-44-HFg" firstAttribute="centerY" secondItem="tUz-Zp-EO3" secondAttribute="centerY" id="eA3-LZ-66p">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="xMV-fT-d5T" firstAttribute="top" secondItem="BmI-3c-9Dh" secondAttribute="top" id="ffh-QR-HS7">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="tYe-Rk-60H" firstAttribute="centerX" secondItem="mZX-tg-gGJ" secondAttribute="centerX" id="fm7-4R-z7a">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="QJ3-s3-WfO" firstAttribute="top" secondItem="yaB-dK-Vrh" secondAttribute="bottom" constant="25" id="gdi-rC-dzV">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="bhi-Go-56x" firstAttribute="top" secondItem="mZX-tg-gGJ" secondAttribute="top" id="h66-zZ-UtM">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="4mF-DI-3Iv" secondAttribute="bottom" id="hS0-yx-SWh">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="bhi-Go-56x" firstAttribute="leading" secondItem="4mF-DI-3Iv" secondAttribute="leading" id="lNP-MA-SVi">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="q3n-3G-dZ1" firstAttribute="centerX" secondItem="BmI-3c-9Dh" secondAttribute="centerX" id="lnt-e8-fHx">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="QJ3-s3-WfO" firstAttribute="top" secondItem="yaB-dK-Vrh" secondAttribute="bottom" constant="15" id="qXP-UO-fIJ">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="BmI-3c-9Dh" firstAttribute="top" secondItem="bhi-Go-56x" secondAttribute="bottom" constant="15" id="thH-3p-tP9">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="4mF-DI-3Iv" firstAttribute="leading" secondItem="mZX-tg-gGJ" secondAttribute="leading" constant="40" id="txx-dm-ZoD">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XQR-fc-gnP" secondAttribute="trailing" constant="15" id="uEE-Ol-Tk6">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="4mF-DI-3Iv" firstAttribute="top" secondItem="tUz-Zp-EO3" secondAttribute="bottom" constant="5" id="x7L-1Q-8CW">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="q3n-3G-dZ1" firstAttribute="leading" secondItem="mZX-tg-gGJ" secondAttribute="leading" id="zPj-fj-ysh">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="zh8-44-HFg" firstAttribute="top" secondItem="jGe-KT-W91" secondAttribute="bottom" constant="5" id="zd1-bZ-hmr">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MWr-d9-Vvi"/>
+                                        <exclude reference="x7L-1Q-8CW"/>
+                                        <exclude reference="Ys9-sk-iYU"/>
+                                        <exclude reference="qXP-UO-fIJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="MWr-d9-Vvi"/>
+                                        <exclude reference="thH-3p-tP9"/>
+                                        <exclude reference="af8-qK-HOa"/>
+                                        <include reference="x7L-1Q-8CW"/>
+                                        <include reference="Ys9-sk-iYU"/>
+                                        <exclude reference="aQp-QW-3H4"/>
+                                        <exclude reference="gdi-rC-dzV"/>
+                                        <include reference="qXP-UO-fIJ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sA1-fM-Lb7">
+                                <rect key="frame" x="20" y="175" width="335" height="21"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.59999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustFontSizeToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmC-te-SWB">
+                                <rect key="frame" x="167.5" y="424" width="40" height="30"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareBtnAction:" destination="h6U-hZ-isk" eventType="touchUpInside" id="vo5-WA-s9K"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v6m-O7-kER">
+                                <rect key="frame" x="147.5" y="30" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="HIX-VC-Gs5">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="50" id="XLA-kk-rc2"/>
+                                    <constraint firstAttribute="height" constant="80" id="moE-YN-p0K">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="50" id="pQh-nR-W4y"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XLA-kk-rc2"/>
+                                        <exclude reference="pQh-nR-W4y"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="HIX-VC-Gs5"/>
+                                        <include reference="XLA-kk-rc2"/>
+                                        <exclude reference="moE-YN-p0K"/>
+                                        <include reference="pQh-nR-W4y"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X9o-Js-Tez"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X9o-Js-Tez" firstAttribute="trailing" secondItem="mZX-tg-gGJ" secondAttribute="trailing" constant="30" id="A6j-ty-lct">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="v6m-O7-kER" firstAttribute="top" secondItem="X9o-Js-Tez" secondAttribute="top" constant="20" id="Af7-qG-fg7">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="mZX-tg-gGJ" firstAttribute="leading" secondItem="X9o-Js-Tez" secondAttribute="leading" constant="100" id="CB0-yT-AKd">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="sA1-fM-Lb7" firstAttribute="top" secondItem="POB-Jy-9Ws" secondAttribute="bottom" constant="15" id="Cmm-Of-iaW">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="EmC-te-SWB" firstAttribute="centerX" secondItem="ipZ-Lk-Wcy" secondAttribute="centerX" id="HJ7-fG-Lyj">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="v6m-O7-kER" firstAttribute="centerX" secondItem="ipZ-Lk-Wcy" secondAttribute="centerX" id="IUA-D1-jqi">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="EmC-te-SWB" firstAttribute="top" secondItem="mZX-tg-gGJ" secondAttribute="bottom" constant="15" id="J0L-ss-hJJ">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="X9o-Js-Tez" firstAttribute="trailing" secondItem="mZX-tg-gGJ" secondAttribute="trailing" constant="100" id="Mj3-Qa-twG">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="mZX-tg-gGJ" firstAttribute="top" secondItem="sA1-fM-Lb7" secondAttribute="bottom" constant="30" id="N7T-Dh-kTd">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="POB-Jy-9Ws" firstAttribute="top" secondItem="v6m-O7-kER" secondAttribute="bottom" constant="30" id="PT8-Ht-ed7">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="POB-Jy-9Ws" firstAttribute="centerX" secondItem="ipZ-Lk-Wcy" secondAttribute="centerX" id="VKj-Km-ZEw">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="v6m-O7-kER" firstAttribute="centerX" secondItem="ipZ-Lk-Wcy" secondAttribute="centerX" id="ZMv-XB-VDv">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="X9o-Js-Tez" firstAttribute="trailing" secondItem="sA1-fM-Lb7" secondAttribute="trailing" constant="20" id="aeM-QV-doG">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="sA1-fM-Lb7" firstAttribute="leading" secondItem="X9o-Js-Tez" secondAttribute="leading" constant="20" id="btp-j0-iEF">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="v6m-O7-kER" firstAttribute="top" secondItem="X9o-Js-Tez" secondAttribute="top" constant="30" id="h91-sc-xkU">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="mZX-tg-gGJ" firstAttribute="top" secondItem="sA1-fM-Lb7" secondAttribute="bottom" constant="20" id="i1g-te-b20">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="X9o-Js-Tez" firstAttribute="trailing" secondItem="POB-Jy-9Ws" secondAttribute="trailing" constant="20" id="iDc-Ri-Jfn">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="POB-Jy-9Ws" firstAttribute="leading" secondItem="X9o-Js-Tez" secondAttribute="leading" constant="20" id="jST-vd-Rar">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="POB-Jy-9Ws" firstAttribute="top" secondItem="v6m-O7-kER" secondAttribute="bottom" constant="20" id="jsi-Qt-ijG">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="mZX-tg-gGJ" firstAttribute="top" secondItem="sA1-fM-Lb7" secondAttribute="bottom" constant="15" id="l5e-xc-gkl">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="POB-Jy-9Ws" firstAttribute="top" secondItem="v6m-O7-kER" secondAttribute="bottom" constant="15" id="rRI-C7-UeK">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="mZX-tg-gGJ" firstAttribute="leading" secondItem="X9o-Js-Tez" secondAttribute="leading" constant="30" id="vjW-p2-jbe">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="EmC-te-SWB" firstAttribute="top" secondItem="mZX-tg-gGJ" secondAttribute="bottom" constant="26" id="xgp-lD-V0n">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustConstantToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Mj3-Qa-twG"/>
+                                <exclude reference="jsi-Qt-ijG"/>
+                                <exclude reference="rRI-C7-UeK"/>
+                                <exclude reference="CB0-yT-AKd"/>
+                                <exclude reference="i1g-te-b20"/>
+                                <exclude reference="l5e-xc-gkl"/>
+                                <exclude reference="Af7-qG-fg7"/>
+                                <exclude reference="IUA-D1-jqi"/>
+                                <exclude reference="J0L-ss-hJJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="A6j-ty-lct"/>
+                                <include reference="Mj3-Qa-twG"/>
+                                <exclude reference="PT8-Ht-ed7"/>
+                                <exclude reference="jsi-Qt-ijG"/>
+                                <include reference="rRI-C7-UeK"/>
+                                <include reference="CB0-yT-AKd"/>
+                                <exclude reference="N7T-Dh-kTd"/>
+                                <exclude reference="i1g-te-b20"/>
+                                <include reference="l5e-xc-gkl"/>
+                                <exclude reference="vjW-p2-jbe"/>
+                                <include reference="Af7-qG-fg7"/>
+                                <include reference="IUA-D1-jqi"/>
+                                <exclude reference="ZMv-XB-VDv"/>
+                                <exclude reference="h91-sc-xkU"/>
+                                <include reference="J0L-ss-hJJ"/>
+                                <exclude reference="xgp-lD-V0n"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="aaY-RO-WJv"/>
+                    <connections>
+                        <outlet property="currentCity" destination="POB-Jy-9Ws" id="7Fe-UE-EjA"/>
+                        <outlet property="currentWeatherImgView" destination="v6m-O7-kER" id="8rN-e0-hj3"/>
+                        <outlet property="currentWeatherLbl" destination="sA1-fM-Lb7" id="Hf6-nS-eYs"/>
+                        <outlet property="preasureImageView" destination="XQR-fc-gnP" id="Tc3-Up-IWx"/>
+                        <outlet property="preasureLbl" destination="yaB-dK-Vrh" id="hsl-YV-EYv"/>
+                        <outlet property="presipationImageView" destination="xMV-fT-d5T" id="8HZ-7J-J4K"/>
+                        <outlet property="presipationLbl" destination="tYe-Rk-60H" id="Yq9-tP-k39"/>
+                        <outlet property="rainyImageView" destination="BmI-3c-9Dh" id="en1-YQ-i63"/>
+                        <outlet property="rainyLbl" destination="q3n-3G-dZ1" id="mCI-qj-bRi"/>
+                        <outlet property="visibilityImageView" destination="jGe-KT-W91" id="uFo-zY-q0p"/>
+                        <outlet property="visibilityLbl" destination="zh8-44-HFg" id="Kb6-Vr-PQT"/>
+                        <outlet property="windDIrectionLbl" destination="tUz-Zp-EO3" id="xrb-O3-VGp"/>
+                        <outlet property="windDirectionImageView" destination="QJ3-s3-WfO" id="n0B-JB-I3a"/>
+                        <outletCollection property="viewArr" destination="bhi-Go-56x" collectionClass="NSMutableArray" id="i6W-PC-wJJ"/>
+                        <outletCollection property="viewArr" destination="4mF-DI-3Iv" collectionClass="NSMutableArray" id="KIk-oL-zEN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VNR-nv-lOm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.59999999999999" y="-233.43328335832086"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="ZJ1-tB-SkS">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarViewController" id="q8P-S5-tMn" customClass="TabBarViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Meu-Tq-j0e"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xng-we-ghK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXJ-LU-DR7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-714" y="71"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="ZPx-nz-E1D">
+            <objects>
+                <viewController storyboardIdentifier="InfoViewController" id="HEP-h4-lIi" customClass="InfoViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Q8-00-hEC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y9P-LD-i4v">
+                                <rect key="frame" x="137.5" y="100" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oI0-DB-bfK">
+                                <rect key="frame" x="20" y="250" width="335" height="23.5"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" systemColor="labelColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAdjustFontSizeToFitDevice" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mEV-tn-B92"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mEV-tn-B92" firstAttribute="trailing" secondItem="oI0-DB-bfK" secondAttribute="trailing" constant="20" id="4pQ-Vi-tsa"/>
+                            <constraint firstItem="y9P-LD-i4v" firstAttribute="height" secondItem="7Q8-00-hEC" secondAttribute="height" multiplier="0.149925" id="6lw-7G-hlA"/>
+                            <constraint firstItem="oI0-DB-bfK" firstAttribute="leading" secondItem="mEV-tn-B92" secondAttribute="leading" constant="20" id="J5d-jz-UyZ"/>
+                            <constraint firstItem="y9P-LD-i4v" firstAttribute="centerX" secondItem="7Q8-00-hEC" secondAttribute="centerX" id="UWu-MW-XAc"/>
+                            <constraint firstItem="y9P-LD-i4v" firstAttribute="width" secondItem="7Q8-00-hEC" secondAttribute="width" multiplier="0.266667" id="eza-Vq-9Gx"/>
+                            <constraint firstItem="oI0-DB-bfK" firstAttribute="top" secondItem="y9P-LD-i4v" secondAttribute="bottom" constant="50" id="jDI-jb-Kg7"/>
+                            <constraint firstItem="y9P-LD-i4v" firstAttribute="top" secondItem="mEV-tn-B92" secondAttribute="top" constant="100" id="zcP-7o-d7V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="y9P-LD-i4v" id="6t6-q4-4Cz"/>
+                        <outlet property="titleLbl" destination="oI0-DB-bfK" id="okw-bF-NMJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ajx-oE-Y6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-714" y="914"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fifth" width="128" height="82"/>
+        <image name="first" width="116" height="128"/>
+        <image name="fourth" width="128" height="100"/>
+        <image name="second" width="90" height="128"/>
+        <image name="third" width="128" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
